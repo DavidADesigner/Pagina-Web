@@ -1,0 +1,3430 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* ⚠️ IMPORTANTE: Si tienes alguna de estas líneas, BÓRRALAS o coméntalas: */
+  /* overflow: hidden; */
+  /* overflow-x: hidden; */
+}
+
+/* Activa el desplazamiento suave al hacer clic en cualquier enlace interno */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajuste de margen superior para evitar que la barra fija tape el contenido */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Header Principal */
+.main-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  background-color: rgba(10, 12, 16, 0.95);
+  will-change: transform; /* Fuerza al navegador a mantenerlo flotando */
+}
+
+.header-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header-logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* Estilos de los enlaces del Menú */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.82rem;
+  
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.25 ease, opacity 0.25s ease;
+  opacity: 0.85;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+  color: #00875a; /* Verde distintivo al pasar el cursor */
+}
+
+/* Adaptación Responsive */
+@media (max-width: 992px) {
+  .main-nav ul {
+    gap: 16px;
+  }
+  
+  .main-nav a {
+    font-size: 0.75rem;
+  }
+}
+
+.hero-section {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0b0c10; /* Restablece el fondo oscuro */
+  padding-top: 66px;         /* Compensa exacto la altura reducida de la barra de navegación */
+  box-sizing: border-box;
+}
+
+/* 2. Asegurar que el texto izquierdo sea blanco/claro (Línea 103) */
+.hero-text {
+  width: 48%;
+  padding-left: 120px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  color: #ffffff;            /* <--- Asegura que títulos y textos base sean blancos */
+}
+
+.brand h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 2px;
+}
+
+.green-text {
+  color: #008744;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 25px;
+}
+
+.description {
+  color: #d1d5db;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  max-width: 480px;
+}
+
+/* Botones */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: #008744;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* 3. Columna con la imagen y degradado amplio */
+.hero-image {
+  width: 32%;
+  height: 100%;
+  background-image: url('img/montaininicial.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Transición suave y amplia hacia la izquierda */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #060913 0%, rgba(6, 9, 19, 0.85) 25%, rgba(6, 9, 19, 0.3) 60%, transparent 100%);
+}
+/* 4. Sección Metodología (Fondo claro) */
+.methodology-section {
+  background-color: #f7f8fa;
+  color: #1a1a1a;
+  padding: 80px 100px; /* Arriba/abajo 80px, Izquierda/Derecha 100px */
+  width: 100%; /* Cambia el 200% por 100% */
+  box-sizing: border-box;
+}
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  max-width: 1400px; /* Limita el ancho horizontal */
+  margin: 0 auto;    /* Centra la grilla en la sección */
+}
+
+.methodology-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el título y el texto */
+  text-align: center;  /* Asegura que el texto se alinee al centro */
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.methodology-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0; /* Limpia márgenes por defecto */
+}
+
+.methodology-header p {
+  color: #555555;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Grilla para las 8 columnas */
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-number {
+  color: #008744;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Círculos con íconos */
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid #2c3e50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.icon-wrapper i {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.step-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.step-card p {
+  font-size: 0.78rem;
+  color: #777777;
+  line-height: 1.4;
+}
+
+/* Adaptación responsive */
+@media (max-width: 1200px) {
+  .methodology-grid {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .methodology-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* 5. Sección Mis Servicios de Diseño */
+.services-section {
+  background-color: #ffffff;
+  padding: 100px 80px;
+  width: 100%;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Columna de la Imagen */
+.services-image {
+  width: 45%;
+}
+
+.image-frame {
+  background-color: #f2f2f2;
+  padding: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Columna del Texto */
+.services-content {
+  width: 55%;
+}
+
+.sub-title {
+  color: #008744;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.services-content h2 {
+  color: #111111;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.paragraph {
+  color: #666666;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+/* Enlaces del pie de sección */
+.services-footer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.domain-link {
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.read-less-btn {
+  color: #222222;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 900px) {
+  .services-container {
+    flex-direction: column;
+  }
+  .services-image, .services-content {
+    width: 100%;
+  }
+}
+/* Ocultar párrafos adicionales */
+.extra-content.hidden {
+  display: none;
+}
+/* 6. Sección Grilla de Tarjetas */
+.portfolio-grid-section {
+  background-color: #ffffff;
+  padding: 40px 80px 100px 80px;
+  width: 100%;
+}
+
+.portfolio-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 50px;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Manejo de contenedores e imágenes */
+.card-image {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e5e7eb;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fondos por defecto o temporales */
+.placeholder-bg {
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+}
+
+/* Tipografías del bloque */
+.portfolio-card h3 {
+  color: #111111;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  color: #008744;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+}
+
+.card-list li {
+  color: #777777;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.card-text {
+  color: #777777;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Adaptación responsive */
+@media (max-width: 1100px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* 7. Sección Cursos */
+.courses-section {
+  background-color: #f7f8fa;
+  padding: 80px 80px 100px 80px;
+  width: 100%;
+}
+
+.courses-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.courses-header {
+  margin-bottom: 50px;
+}
+
+.courses-header h2 {
+  color: #111111;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.courses-header p {
+  color: #444444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 650px;
+}
+
+/* Grilla para las 7 tarjetas */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen con bordes redondeados */
+.course-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background-color: #e5e7eb;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.course-card h4 {
+  color: #111111;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 1100px) {
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30px;
+  }
+}
+
+
+/* 8. Sección Portafolio */
+.portfolio-gallery-section {
+  background-color: #ffffff !important;
+  padding: 60px 80px 100px 80px;
+  width: 100%;
+}
+
+.portfolio-gallery-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.portfolio-gallery-section h2 {
+  color: #111111;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* Grilla de 3 columnas emparejadas */
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.gallery-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Par de imágenes en paralelo */
+.gallery-row-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Para que la tarjeta del sapo/arte coincida en altura con la de Pa Llevar */
+.gallery-row-group .gallery-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón único centrado */
+.portfolio-btn-wrapper {
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.view-more-btn {
+  display: inline-block;
+  background-color: #00a859;
+  color: #ffffff;
+  padding: 10px 35px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.view-more-btn:hover {
+  background-color: #008744;
+}
+
+/* Adaptación Mobile */
+@media (max-width: 900px) {
+  .gallery-grid {
+    flex-direction: column;
+  }
+}
+
+/* Reducción de tamaño del par de tarjetas */
+.compact-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-height: 280px; /* Controla la altura máxima reducida */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.small-thumb img {
+  height: 280px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Extensión horizontal de la imagen de Aeronaves */
+.gallery-compact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.wide-banner {
+  width: calc(200% + 20px); /* Ocupa la columna central y la derecha */
+}
+
+@media (max-width: 900px) {
+  .wide-banner {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   BENTO GRID BÁSICO Y ADAPTATIVO (RESPONSIVE)
+   ========================================================= */
+/* =========================================================
+/* =========================================================
+   SECCIÓN DISEÑADOR - BENTO GRID COMPLETO Y CORREGIDO
+   ========================================================= */
+
+/* =========================================================
+   SECCIÓN DISEÑADOR - FONDO BLANCO Y MÁRGENES DE ESCRITORIO
+   ========================================================= */
+.bento-col:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-section {
+  background-color: #ffffff;
+  max-width: 1180px;        /* Reducido de 1350px a 1180px para dar más margen lateral */
+  margin: 0 auto;           /* Centra todo el contenedor */
+  padding: 60px 80px;       /* Aumentado a 80px de espacio libre en los costados */
+  box-sizing: border-box;
+}
+
+/* Ajusta el alto maximo de la foto principal */
+.bento-col:first-child > .bento-card:first-child img {
+  max-height: 260px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.bento-card.card-about {
+  padding: 10px 12px;
+  margin-top: auto; /* Empuja la tarjeta al fondo de la columna */
+}
+
+.about-photo img {
+  height: 80px; /* Reducimos 15px extra a la foto casual */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Cambiamos el título a negro para dar contraste con el fondo blanco */
+.bento-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #000000;            /* Texto negro */
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Color de los textos fuera de las tarjetas (Nombres y Redes) */
+.profile-name {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.profile-name strong {
+  color: #000000;
+}
+
+.social-footer,
+.social-footer .handle,
+.social-icons a,
+.social-icons i {
+  color: #000000; /* Redes en negro sobre el canvas blanco */
+}
+
+/* Estructura Grid de 4 columnas */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 270px 1.1fr 1.1fr 270px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Agrupadores de columnas verticales */
+.bento-col-middle,
+.bento-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Tarjetas oscuras (Formación, Herramientas, Exp, Sobre mí) */
+.bento-card {
+  background-color: #383a3d; /* Tono de gris exacto al prototipo */
+  border-radius: 12px;
+  padding: 22px;
+  color: #ffffff;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.bento-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+/* Columna 1: Tarjeta de perfil e imagen */
+.item-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-box {
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #2b2d30;
+  min-height: 340px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: #e0e0e0; /* Blanco suave */
+  line-height: 1.4;
+}
+
+.profile-name strong {
+  color: #ffffff;
+}
+
+/* Columna 2: Formación y Herramientas */
+.info-block {
+  margin-bottom: 14px;
+}
+
+.info-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-block .label {
+  font-size: 0.72rem;
+  color: #a0a5ad;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.info-block .school {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Grillas de 3 columnas (Herramientas y Hobbies) */
+.skills-grid, 
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.skills-grid span,
+.hobbies-grid span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Columna 3: Experiencia Laboral */
+.card-experience {
+  text-align: center;
+}
+
+.exp-title {
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.exp-item strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.exp-item span {
+  font-size: 0.76rem;
+  color: #b0b5bd;
+}
+
+/* Columna 4: Sobre mí, Foto casual y Redes */
+.item-casual {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.social-footer .handle {
+  color: #ffffff;
+  font-size: 0.82rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a,
+.social-icons i {
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+/* =========================================================
+   VERSIÓN ADAPTATIVA PARA MÓVILES (RESPONSIVE)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-box {
+    min-height: 350px;
+  }
+
+  .skills-grid, 
+  .hobbies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+
+/* 10. Sección Educación y Lecturas */
+.education-section {
+  background-color: #f7f7f8;
+  padding: 50px 40px 70px 40px;
+  width: 100%;
+}
+
+.education-container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.education-title {
+  color: #111111;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.education-subtitle {
+  color: #222222;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+/* Grilla principal de 4 bloques (Carrusel + 3 Columnas) */
+.education-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Carrusel de Libro */
+.book-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.book-cover {
+  max-width: 210px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #111111;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.2);
+}
+
+/* Columnas de Lista de Libros con Divisorias */
+.book-list-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+/* Línea vertical divisoria a la izquierda de las columnas 2 y 3 */
+.book-list-col:nth-child(3)::before,
+.book-list-col:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #000000;
+}
+
+/* Elementos individuales de la lista */
+.book-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-item strong {
+  font-size: 0.82rem;
+  color: #111111;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.book-item span {
+  font-size: 0.78rem;
+  color: #444444;
+}
+
+/* Resaltado del libro activo/seleccionado */
+.book-item.highlight-book strong {
+  font-weight: 900;
+  font-size: 0.88rem;
+}
+
+.book-item.highlight-book span {
+  font-weight: 800;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .education-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  
+  .book-list-col::before {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Estilos interactivos para la lista de libros */
+.book-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.book-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.book-item strong {
+  font-size: 0.82rem;
+  color: #111111;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: font-weight 0.2s ease, color 0.2s ease;
+}
+
+.book-item span {
+  font-size: 0.78rem;
+  color: #555555;
+  transition: color 0.2s ease;
+}
+
+/* Estado ACTIVO al hacer clic o seleccionar */
+.book-item.active strong {
+  font-weight: 900 !important;
+  font-size: 0.86rem;
+  color: #000000;
+}
+
+.book-item.active span {
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Animación suave para el cambio de portada */
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+/* 11. Sección Proyectos */
+.projects-section {
+  background-color: #ffffff;
+  padding: 60px 40px 80px 40px;
+  color: #111111;
+}
+
+.projects-container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.projects-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.projects-tagline {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.projects-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 35px;
+  max-width: 750px;
+}
+
+/* Cabecera de 2 columnas */
+.projects-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.questions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.questions-list li {
+  font-size: 0.85rem;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.intro-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro-col-right p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #222222;
+}
+
+/* Grilla de 6 Tarjetas de Proyectos */
+.projects-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  color: #444444;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  min-height: 48px;
+}
+
+.card-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-tags li {
+  font-size: 0.75rem;
+  color: #222222;
+  line-height: 1.25;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 1200px) {
+  .projects-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .projects-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Desplazamiento suave para todos los enlaces internos */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 12. Pie de página (Footer) */
+.main-footer {
+  background-color: #f7f7f7;
+  border-top: 1px solid #e2e2e2;
+  padding: 60px 40px 30px 40px;
+  color: #222222;
+}
+
+.footer-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border: none; /* Asegura que no haya bordes heredados */
+}
+
+.footer-col {
+  border: none !important; /* Elimina cualquier línea vertical indeseada */
+  box-shadow: none !important;
+}
+
+/* Marca y Logo */
+.footer-logo {
+  margin-bottom: 12px;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 170px;
+  height: auto;
+}
+
+.footer-slogan {
+  font-size: 0.95rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+.footer-slogan em {
+  color: #00875a;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Encabezados y Enlaces */
+.footer-heading {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 18px;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 0.85rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #00875a;
+  transform: translateX(3px);
+}
+
+/* Newsletter Form */
+.newsletter-text {
+  font-size: 0.82rem;
+  color: #555555;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 4px;
+  max-width: 300px;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-form:focus-within {
+  border-color: #00875a;
+}
+
+.newsletter-form input {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  width: 100%;
+  color: #333;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #00875a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #006c48;
+}
+
+.newsletter-form button:active {
+  transform: scale(0.95);
+}
+
+/* Bottom / Copyright */
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: #777777;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* Asegurar que las imágenes y textos respeten los márgenes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* --- MEDIA QUERIES PARA CELULARES (Menos de 768px) --- */
+/* Contenedor principal del Hero */
+  main,
+  section,
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 80px 20px 40px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ajuste de tu clase .hero-text */
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ajuste para los textos internos */
+  .hero-text h1,
+  .hero-text h2,
+  .hero-text p,
+  .hero-description,
+  .hero-content p {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Imagen / Fondo del Hero */
+  .hero-image {
+    width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-top: 25px !important;
+  }
+
+  .nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  
+
+  /* Menú Desplegable en Móvil */
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 12, 16, 0.98);
+    padding: 20px 0;
+    display: none; /* Se oculta por defecto */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-nav.active {
+    display: block; /* Se muestra al hacer clic en el botón */
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+  }
+/* =========================================================
+   ESTILOS PARA CELULAR (Pantallas de 768px o menos)
+   ========================================================= */
+@media (max-width: 768px) {
+  
+  /* Botón hamburguesa en móvil */
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+
+  /* Ocultar el menú horizontal en móvil */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 12, 16, 0.98);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Desplegar menú cuando se hace clic */
+  .main-nav.active {
+    display: block !important;
+  }
+
+  .main-nav ul {
+    flex-direction: column !important;
+    gap: 18px !important;
+    align-items: center !important;
+  }
+
+  /* Ajustes de texto en móvil */
+  main,
+  section,
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 90px 20px 40px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-text h1,
+  .hero-text h2,
+  .hero-text p,
+  .hero-description {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .hero-image {
+    width: 100% !important;
+    position: relative !important;
+    margin-top: 25px !important;
+  }
+}
+
+/* =========================================================
+   ESTILOS PARA ESCRITORIO (Pantallas mayores a 768px)
+   ========================================================= */
+@media (min-width: 769px) {
+  
+  /* Ocultar botón hamburguesa en computadora */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Restaurar menú horizontal original */
+  .main-nav {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .main-nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 28px !important;
+    align-items: center !important;
+  }
+}/* =========================================================
+   ESTILOS SOLO PARA CELULAR (768px o menos)
+   ========================================================= */
+@media (max-width: 768px) {
+  
+  /* Botón hamburguesa */
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+
+  /* Menú desplegable móvil */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 12, 16, 0.98);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-nav.active {
+    display: block !important;
+  }
+
+  .main-nav ul {
+    flex-direction: column !important;
+    gap: 18px !important;
+    align-items: center !important;
+  }
+
+  /* Hero en celular (1 sola columna) */
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 90px 20px 40px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero-text h1,
+  .hero-text h2,
+  .hero-text p,
+  .hero-description {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .hero-image {
+    width: 100% !important;
+    position: relative !important;
+    margin-top: 25px !important;
+  }
+}
+
+/* =========================================================
+   ESTILOS SOLO PARA ESCRITORIO (Mayores a 768px)
+   ========================================================= */
+@media (min-width: 769px) {
+  
+  /* Ocultar botón hamburguesa */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Menú horizontal */
+  .main-nav {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .main-nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 28px !important;
+    align-items: center !important;
+  }
+
+  /* Contenedor Hero: 2 columnas, altura completa de pantalla y alineación centrada */
+  .hero-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important; /* Centra el texto verticalmente respecto a la pantalla */
+    min-height: 100vh !important;   /* Ocupa todo el alto de la ventana */
+    padding: 50px 0 0 0 !important;/* Elimina paddings laterales para llevar la imagen al borde */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Centrado y margen del texto a la izquierda */
+  .hero-text {
+    max-width: 580px !important;
+    margin-left: 80px !important;    /* Separa el texto del borde izquierdo para equilibrar la composición */
+    padding-right: 20px !important;
+  }
+
+  /* Contenedor de la imagen que llena todo el lado derecho */
+  .hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  .hero-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;     /* Cubre todo el espacio sin dejar franjas ni espacios vacíos */
+    display: block !important;
+  }
+}
+
+/* =========================================================
+   SECCIÓN PERFIL / DISEÑADOR
+   ========================================================= */
+.profile-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  color: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+.profile-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+/* Grilla principal de 4 columnas */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 260px 1.1fr 1.1fr 260px;
+  gap: 20px;
+  align-items: start;
+}
+
+
+/* 1. Contenedor principal para alineación lateral general */
+.bento-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 100px; /* Asegura los 100px de margen horizontal en todo el bloque */
+  box-sizing: border-box;
+}
+
+/* 2. Alineación vertical de los 3 cuadros superiores */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 260px 1.1fr 1.1fr 260px; /* Mantén tu estructura */
+  gap: 10px;
+  align-items: center; /* Cambia "start" por "center" para nivelar verticalmente los cuadros con el video */
+}
+
+/* 3. Margen interno y alineación de la tarjeta oscura */
+.dark-card {
+  display: flex;
+  background-color: #383d42;
+  padding: 40px 0; /* Padding arriba/abajo para darle espacio al texto */
+  gap: 40px;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+/* Ajuste de columnas de texto oscuro */
+.dark-card-col {
+  flex: 1;
+  color: #ffffff;
+}
+/* Estilo base de tarjetas oscuras */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-dark {
+  background-color: #383d42; /* Gris oscuro del contenedor */
+  padding: 10px;
+  color: #ffffff;
+}
+
+/* Títulos dentro de las tarjetas oscuras */
+.card-dark h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #ffffff; /* Texto blanco para alto contraste */
+}
+
+/* Subtextos en las listas (Títulos secundarios) */
+.info-item {
+  margin-bottom: 16px;
+}
+
+.info-item .sub {
+  display: block;
+  font-size: 0.78rem;
+  color: #a0aab2; /* Gris claro legible */
+  margin-bottom: 2px;
+}
+
+/* --- Ajustes para compactar la tarjeta Sobre Mí --- */
+
+/* 1. Reduce la altura de la foto casual */
+.about-photo img {
+  height: 95px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 2. Distribuye los hobbies en 2 columnas compactas */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Mantiene las 3 columnas */
+  gap: 4px 6px;                          /* Reduce la separación horizontal entre ítems */
+  font-size: 0.65rem;                    /* Reduce el tamaño del texto */
+  white-space: nowrap;                   /* Evita saltos de línea no deseados */
+}
+
+.hobbies-grid span {
+  overflow: visible;                     /* Muestra la palabra completa sin cortar */
+  text-overflow: clip;                   /* Elimina los puntos suspensivos (...) */
+}
+
+/* 3. Disminuye el relleno de la tarjeta */
+.bento-card.card-about {
+  padding: 12px 14px;
+}
+
+
+.info-item h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* Disposición vertical de columnas compuestas */
+.col-middle-left, .col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Foto principal */
+.card-photo img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.photo-caption {
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  margin-top: 12px;
+}
+
+/* Experiencia laboral */
+.card-experience {
+  text-align: center;
+}
+
+.exp-item {
+  margin-bottom: 14px;
+}
+
+.exp-item h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.exp-item p {
+  font-size: 0.78rem;
+  color: #a0aab2;
+}
+
+/* Grillas de Herramientas y Hobbies */
+.tools-grid, .hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 8px;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+/* Foto personal e iconos inferiores */
+.card-personal img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.social-footer .handle {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.social-footer .icons a {
+  color: #1a1a1a;
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+/* =========================================================
+   ADAPTACIÓN RESPONSIVA (Tablet y Móvil)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .profile-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SECCIÓN FILOSOFÍAS Y DEFINICIONES (DISEÑO Y ÉTICA)
+   ========================================================= */
+.philosophies-section {
+  background-color: #f8f9fa; /* Fondo claro general */
+  padding: 80px 20px;
+  color: #2b2b2b;
+}
+
+.philosophies-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* 1. Tarjeta Oscura Superior */
+.dark-card {
+  background-color: #525252; /* Color de la tarjeta gris oscura */
+  border-radius: 12px;       /* Bordes redondeados */
+  padding: 45px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 50px;
+  color: #ffffff;
+  margin-bottom: 70px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dark-card-col p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  margin-bottom: 18px;
+}
+
+.dark-card-col p:last-child {
+  margin-bottom: 0;
+}
+
+.card-divider {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 100%;
+  width: 1px;
+}
+
+.card-quote {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 25px;
+  text-align: right;
+}
+
+/* 2. Columnas Inferiores Claras */
+.light-columns-container {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 50px;
+  align-items: start;
+  
+  /* Agrega estas 4 líneas para los márgenes laterales y el centrado */
+  width: 100%;
+  max-width: 1440px; /* Usa el mismo max-width que tenga tu .bento-grid superior */
+  margin: 40px auto;  /* El 'auto' centra la sección y da espacio arriba/abajo */
+  padding: 0 40px;    /* Margen interno para que no pegue a los bordes en pantallas chicas */
+  box-sizing: border-box;
+}
+
+.light-col h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.light-col p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #2b2b2b !important;
+  margin-top: 25px;
+}
+
+.section-divider {
+  background-color: #525252; /* Color de la línea separadora inferior */
+  height: 100%;
+  width: 2px;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 850px) {
+  .dark-card, 
+  .light-columns-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .card-divider, 
+  .section-divider {
+    display: none;
+  }
+
+  .card-quote {
+    text-align: left;
+  }
+}
+/* Desplazamiento suave al hacer clic en cualquier ancla */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Evita que la barra de navegación tape el inicio de la sección */
+}
+
+/* Garantizar que el encabezado y el menú estén siempre al frente */
+.main-header {
+  position: relative;
+  z-index: 1000 !important; /* Capa superior para permitir clics */
+}
+
+.main-nav a {
+  cursor: pointer;
+}
+
+/* Contenedor principal Grid */
+.bento-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.3fr 1fr; /* 4 Columnas simétricas */
+  grid-template-rows: repeat(2, minmax(280px, auto)); /* 2 Filas de altura uniforme */
+  gap: 20px; /* ESPACIO SIMÉTRICO ENTRE TODOS LOS CUADROS */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo base uniforme para TODAS las tarjetas */
+.bento-card {
+  background-color: #2b3036; /* Color de fondo oscuro de tus cuadros */
+  border-radius: 16px;
+  padding: 24px; /* Padding interno igual para todas */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Ajuste específico: La tarjeta de Experiencia ocupa las 2 filas completas */
+.card-experience {
+  grid-row: span 2;
+}
+
+/* Ajustes de imágenes dentro de las tarjetas */
+.bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* La tarjeta de perfil personal sin fondo oscuro adicional si prefieres que la imagen destaque */
+.card-profile {
+  background-color: transparent;
+  padding: 0;
+}
+.card-profile img {
+  height: calc(100% - 35px);
+}
+
+
+/* =========================================================
+   SECCIÓN DISEÑADOR - BENTO GRID COMPLETO Y UNIFICADO
+   ========================================================= */
+
+/* Contenedor Principal (Fondo blanco y márgenes amplios a los lados) */
+.bento-section {
+  background-color: #ffffff;
+  max-width: 1180px;        /* Ancho contenido para crear margen lateral */
+  margin: 0 auto;           /* Centrado en la pantalla */
+  padding: 60px 80px;       /* Espacio superior e inferior / márgenes laterales grandes */
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Título de la sección */
+.bento-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #000000;            /* Texto negro sobre fondo blanco */
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Grilla de 4 Columnas simétricas */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 260px 1.1fr 1.1fr 260px;
+  gap: 16px;                 /* Espacio simétrico entre tarjetas */
+  align-items: stretch;
+}
+
+/* Agrupadores verticales de la Columna 2 y Columna 4 */
+.bento-col-middle,
+.bento-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Estilo base de Tarjetas Oscuras (Formación, Herramientas, Experiencia, Sobre Mí) */
+.bento-card {
+  background-color: #383a3d;  /* Gris oscuro de las tarjetas */
+  border-radius: 12px;
+  padding: 22px;
+  color: #ffffff;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.bento-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+/* --- COLUMNA 1: FOTO Y NOMBRE --- */
+.item-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-box {
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #2b2d30;
+  min-height: 330px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  color: #333333;            /* Color visible en fondo blanco */
+  line-height: 1.4;
+}
+
+.profile-name strong {
+  color: #000000;
+}
+
+/* --- COLUMNA 2: FORMACIÓN Y HERRAMIENTAS --- */
+.info-block {
+  margin-bottom: 14px;
+}
+
+.info-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-block .label {
+  font-size: 0.72rem;
+  color: #a0a5ad;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.info-block .school {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Grillas Internas de 3 Columnas (Herramientas / Sobre mí) */
+.skills-grid, 
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.skills-grid span,
+.hobbies-grid span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- COLUMNA 3: EXPERIENCIA LABORAL --- */
+.card-experience {
+  text-align: center;
+}
+
+.exp-title {
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.exp-item strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.exp-item span {
+  font-size: 0.76rem;
+  color: #b0b5bd;
+}
+
+/* --- COLUMNA 4: SOBRE MÍ, FOTO CASUAL Y REDES --- */
+.item-casual {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000000;            /* Iconos y texto en negro sobre fondo blanco */
+}
+
+.social-footer .handle {
+  color: #000000;
+  font-size: 0.82rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a,
+.social-icons i {
+  color: #000000;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover,
+.social-icons i:hover {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   VERSIÓN ADAPTATIVA PARA CELULAR Y TABLETS (RESPONSIVE)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .bento-section {
+    padding: 40px 30px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .bento-section {
+    padding: 30px 16px;      /* Reduce los márgenes en pantallas móviles */
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-box {
+    min-height: 350px;
+  }
+
+  .skills-grid, 
+  .hobbies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* =========================================================
+   REGLA PARA ESCRITORIO (DEBE IR FUERA DE CUALQUIER MEDIA QUERY)
+   ========================================================= */
+.bento-section {
+  background-color: #ffffff !important;
+  max-width: 1420px !important;
+  margin: 0 auto !important;
+  padding: 50px 40px !important;
+  box-sizing: border-box !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bento-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #000000;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+/* Grilla Principal: 3 Columnas */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 260px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Rellena completamente el cuadro superior izquierdo con la foto */
+.bento-col:first-child > .bento-card:first-child {
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  height: 380px !important; /* Ajusta la altura completa de la tarjeta */
+}
+
+.bento-col:first-child > .bento-card:first-child img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+}
+/* Fila de Formación + Herramientas */
+.bento-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Base de tarjetas oscuras */
+.bento-card {
+  background-color: #31353a;
+  border-radius: 12px;
+  padding: 20px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.bento-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* COLUMNA 1: Tarjeta Perfil */
+.profile-card {
+  background: transparent;
+}
+
+.photo-box {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 280px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  margin: 10px 0 6px 0;
+  font-size: 0.88rem;
+  color: #666666;
+}
+
+.profile-name strong {
+  color: #000000;
+}
+
+/* Redes en fondo blanco */
+.social-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.social-footer .handle {
+  color: #000000;
+  font-weight: 700;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.social-icons a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* Tarjeta Sobre Mí */
+.card-about {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.about-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 130px;
+  margin-bottom: 14px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Grillas de texto (Herramientas y Hobbies) */
+.skills-grid, .hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Formación */
+.info-block {
+  margin-bottom: 12px;
+}
+
+.info-block:last-child {
+  margin-bottom: 0;
+}
+
+.info-block .label {
+  font-size: 0.7rem;
+  color: #9aa0a6;
+  display: block;
+}
+
+.info-block .school {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 2px 0 0 0;
+}
+
+/* Limitar la altura de la tarjeta de la imagen para que no desborde verticalmente */
+.landscape-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 380px;             /* Fijamos una altura adecuada para escritorio */
+  width: 100%;
+}
+
+.landscape-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Mantiene la proporción sin deformarse */
+  display: block;
+}
+
+/* Alineación vertical estricta para las 3 columnas */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 260px;
+  gap: 16px;
+  align-items: start;        /* Mantiene el alineamiento superior */
+}
+
+/* Asegura que la tarjeta de Sobre mí no intente expandirse más de la cuenta */
+.card-about {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pastilla translúcida sobre la imagen */
+.social-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.social-overlay .handle {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.social-overlay .social-icons a {
+  color: #ffffff;
+}
+
+/* Experiencia */
+.card-experience {
+  height: 100%;
+  text-align: center;
+}
+
+.exp-title {
+  font-style: italic;
+  margin-bottom: 20px !important;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exp-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.exp-item span {
+  font-size: 0.74rem;
+  color: #a0a5ad;
+}
+
+/* Adaptación Responsive */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Limita la tarjeta central para que no empuje el diseño hacia abajo */
+/* 1. Tarjeta contenedora */
+.landscape-card {
+  background-color: #000000;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 500px; /* Reducido de 500px a 280px para que alineé con la izquierda */
+  border-radius: 30px;
+  overflow: hidden;  /* Cambiado de auto a hidden para recortar esquinas y video */
+}
+
+/* 2. Video alineado */
+.landscape-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 3. Contenedor de redes sociales */
+.social-overlay {
+  background-color: floralwhite;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* 4. Color negro para el texto y los íconos */
+.social-overlay .handle,
+.social-overlay .social-icons a {
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+/* --- AL FINAL DEL ARCHIVO STYLES.CSS --- */
+
+/* 1. Ajustes para compactar la tarjeta "Sobre mí" */
+.bento-card.card-about {
+  padding: 10px 12px !important;
+  margin-top: auto;
+}
+
+.about-photo img {
+  height: 175px !important; /* Foto casual más compacta */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 2. Formato de hobbies en 3 columnas sin cortar texto */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 4px;
+  font-size: 0.62rem !important; /* Texto más pequeño */
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+.hobbies-grid span {
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* 3. Ajuste de altura para alineación exacta de la columna izquierda */
+.bento-col:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-col:first-child > .bento-card:first-child img {
+  max-height: 240px !important;
+  object-fit: cover;
+}
+
+/* Reduce la foto ejecutiva superior para subir todo el bloque */
+.bento-col:first-child > div:first-child img,
+.bento-card-profile img {
+  height: 350px !important;
+  max-height: 250px !important;
+  object-fit: cover;
+  object-position: top; /* Asegura que tu rostro quede centrado al recortar abajo */
+}
+
+/* Elimina márgenes sobrantes entre foto, texto y redes */
+.profile-name, 
+.social-footer {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+/* --- ESTILOS TARJETA DE VIDEO Y BOTÓN --- */
+.card-video-container {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding: 0 !important;
+  min-height: 280px;
+}
+
+.bento-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.video-overlay-bottom {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.video-social-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.video-social-footer .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.sound-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.sound-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.03);
+}
+
+.sound-btn.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Botón Flotante de Activar Sonido --- */
+/* Estado base del botón cuando el video está silenciado (100% visible) */
+.audio-toggle-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  opacity: 1;
+  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Al pasar el cursor por encima se ve al 100% */
+.audio-toggle-btn:hover {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.04);
+}
+
+/* Estado cuando el sonido está encendido (50% de opacidad) */
+.audio-toggle-btn.activado {
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Distribuye mejor el contenido dentro de Herramientas */
+.bento-card:has(.skills-grid),
+.bento-card:contains("Herramientas") {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px 10px !important; /* Más espacio vertical y horizontal */
+  font-size: 0.78rem !important; /* Texto un poco más legible */
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.skills-grid span {
+  white-space: nowrap !important;
+}
+
+/* ======================================================
+   CORRECCIONES DEFINITIVAS
+   ====================================================== */
+
+/* 1. FOTO PRINCIPAL: Ocupa el 100% del cuadro sin espacio negro abajo */
+.bento-col:first-child > .bento-card:first-child,
+div.bento-card:has(> img[alt*="David"]),
+div.bento-card:has(> img) {
+  padding: 0 !important;
+  overflow: hidden !important;
+  height: auto !important;
+  display: flex !important;
+}
+
+.bento-col:first-child > .bento-card:first-child img,
+.bento-card > img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+}
+
+/* 2. HERRAMIENTAS: Centra el contenido y distribuye el espacio */
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 16px 8px !important; /* Espacio uniforme entre filas */
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+.skills-grid span {
+  font-size: 2px rem !important;
+  white-space: nowrap !important;
+}
+
+/* 3. ALINEACIÓN GENERAL DE LA COLUMNA IZQUIERDA */
+.bento-col:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Añade espacio en blanco entre la fila superior y la tarjeta de video */
+.card-video-container,
+.landscape-card,
+div.bento-card:has(video) {
+  margin-top: 40px !important; /* Ajusta a 16px o 24px según el espacio que prefieras */
+}
+
+/* Quita el espacio gris inferior y estira la foto al 100% del cuadro */
+.profile-card {
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.profile-card .photo-box {
+  width: 100% !important;
+  height: 100% !important;
+  flex: 1 !important;
+  overflow: hidden !important;
+}
+
+.profile-card .photo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+}
+
+/* Elimina el espacio oscuro y llena el recuadro con la foto */
+.profile-card {
+  padding: 0 !important;
+  overflow: hidden !important;
+  height: 250px !important;
+  margin-bottom: 10px ; /* Ajusta la altura si deseas más o menos alto */
+}
+
+.profile-card .photo-box,
+.profile-card .photo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+}
+
+/* Alineación limpia del texto e iconos inferiores */
+.profile-name {
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+.social-footer {
+  margin-top: 4px !important;
+}
+
+/* Espacio en blanco entre las redes sociales y la tarjeta Sobre mí */
+.social-footer {
+  margin-bottom: 0px !important; /* Ajusta el espacio deseado */
+}
+
+.card-about,
+div.bento-card:has(h2:contains("Sobre mí")) {
+  margin-top: 10px !important;
+}
+
+/* Espacio en blanco entre las redes sociales y la tarjeta Sobre mí */
+.social-footer {
+  margin-bottom: 18px !important; /* Ajusta el espacio deseado */
+}
+
+.card-about,
+div.bento-card:has(h2:contains("Sobre mí")) {
+  margin-top: 10px !important;
+}
+
+/* ======================================================
+   ALINEACIÓN Y SIMETRÍA DEL BENTO GRID
+   ====================================================== */
+
+/* 1. Alturas iguales para los bloques de la fila superior */
+.bento-col:first-child .profile-card {
+  height: 270px !important;
+}
+
+.bento-card:has(h2:contains("Formación")),
+.bento-card:has(h2:contains("Herramientas")) {
+  min-height: 270px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* 2. Distribución simétrica de la grilla de Herramientas */
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px 10px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+/* 3. Ajuste perfecto para el video central */
+.landscape-card,
+.card-video-container {
+  margin-top: 18px !important;
+  height: 310px !important; /* Equilibra la altura con 'Sobre mí' */
+  overflow: hidden !important;
+}
+
+.landscape-card video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 4. Separación limpia entre el handle y la tarjeta Sobre mí */
+.social-footer {
+  margin-top: 8px !important;
+  margin-bottom: 18px !important;
+}
+
+/* Permite hacer clic en cada item de libro */
+.book-item {
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.book-item:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
+
+/* Destaca el libro seleccionado en negrita */
+.book-item.active strong {
+  font-weight: 800 !important;
+  color: #000000 !important;
+}
+
+/* ======================================================
+   SIMETRÍA Y ALINEACIÓN EXACTA BENTO GRID
+   ====================================================== */
+
+/* 1. Igualar alturas de la fila superior */
+.profile-card,
+.bento-card:has(h2:contains("Formación")),
+.bento-card:has(h2:contains("Herramientas")) {
+  height: 280px !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Fijar altura máxima para la tarjeta de Experiencia Laboral con Scroll elegante */
+.bento-card:has(h2:contains("Experiencia")),
+.experience-card {
+  max-height: 620px !important;
+  overflow-y: auto !important;
+}
+
+/* Opcional: Personalizar la barra de scroll para que combine */
+.bento-card:has(h2:contains("Experiencia"))::-webkit-scrollbar {
+  width: 6px;
+}
+.bento-card:has(h2:contains("Experiencia"))::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+/* 3. Ajustar tamaño exacto del contenedor del video */
+.landscape-card,
+.card-video-container {
+  height: 300px !important;
+  margin-top: 45px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.landscape-card video,
+.card-video-container video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 4. Separación limpia entre texto, redes y tarjeta Sobre Mí */
+.social-footer {
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.card-about {
+  height: 270px !important;
+}
+
+/* ======================================================
+   REDUCCIÓN Y ALINEACIÓN DE EXPERIENCIA LABORAL
+   ====================================================== */
+
+/* 1. Ajustar el contenedor general de la tarjeta */
+.bento-card:has(h2:contains("Experiencia")),
+.experience-card,
+.col-experiencia {
+  /* Forzamos a que termine exactamente en la base de la grilla */
+  max-height: 620px !important; 
+  padding: 18px 16px !important; /* Padding interno más ajustado */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Reducir espaciado entre cada trabajo */
+.experience-item,
+.bento-card:has(h2:contains("Experiencia")) div {
+  margin-bottom: 8px !important; /* Menos espacio entre bloques */
+}
+
+/* 3. Ajuste de tipografía para ahorrar espacio vertical */
+.experience-item h3,
+.experience-item strong {
+  font-size: 0.88rem !important;
+  margin-bottom: 1px !important;
+  line-height: 1.1 !important;
+}
+
+.experience-item p,
+.experience-item span {
+  font-size: 0.75rem !important;
+  line-height: 1 !important;
+  opacity: 0.75;
+}
+
+/* 4. Si los ítems superan la altura, añade scroll discreto sin deformar */
+.experience-list-container {
+  overflow-y: auto !important;
+  max-height: 540px !important;
+  padding-right: 4px;
+}
+
+/* ======================================================
+   CORRECCIÓN PARA TARJETA DE EXPERIENCIA (.card-experience)
+   ====================================================== */
+
+/* 1. Detener el estiramiento y controlar la altura total */
+.card-experience {
+  align-self: start !important;
+  max-height: 800px !important;
+  padding: 16px 14px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+/* 2. Reducir márgenes del título principal */
+.exp-title {
+  font-size: 1rem !important;
+  margin-bottom: 12px !important;
+  text-align: center;
+}
+
+/* 3. Ajustar el contenedor de la lista */
+.exp-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important; /* Espacio compacto entre trabajos */
+}
+
+/* 4. Compactar cada bloque de trabajo */
+.exp-item {
+  margin-bottom: 2px !important;
+  line-height: 1.1 !important;
+}
+
+.exp-item strong {
+  font-size: 0.82rem !important;
+  display: block !important;
+  margin-bottom: 1px !important;
+}
+
+.exp-item span {
+  font-size: 0.72rem !important;
+  display: block !important;
+  opacity: 0.75;
+}
+
+/* ======================================================
+   ALINEACIÓN CORRECTA ARRIBA - COLUMNA DERECHA
+   ====================================================== */
+
+/* 1. Alineamos la columna arriba en el Grid */
+.bento-grid > .bento-col:last-child,
+.bento-grid > .bento-col:nth-child(3) {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-self: start !important; /* <--- Esto la sube al tope */
+}
+
+/* 2. Mantenemos el tamaño compacto para que no invada la fila de abajo */
+.card-experience {
+  height: auto !important;
+  max-height: 420px !important; /* Ajuste para encajar exacto en la fila superior */
+  padding: 14px 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Estilos de texto compactos */
+.exp-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.exp-item strong {
+  font-size: 0.78rem !important;
+  line-height: 1.1 !important;
+}
+
+.exp-item span {
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+  opacity: 0.75;
+}
+
+/* ======================================================
+   AJUSTE DE ALTURA COMPLETA - EXPERIENCIA HASTA EL VIDEO
+   ====================================================== */
+
+/* 1. Estirar la columna 3 a toda la altura del Grid */
+.bento-grid > .bento-col:last-child,
+.bento-grid > .bento-col:nth-child(3) {
+  align-self: stretch !important; /* <--- Estira el contenedor hasta el fondo */
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 2. Ajustar la tarjeta para ocupar todo el alto disponible */
+.card-experience {
+  height: 100% !important; /* Ocupa todo el alto de la columna */
+  max-height: none !important; /* Eliminamos el límite fijo */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* Distribuye el título y la lista de extremo a extremo */
+  padding: 20px 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Distribuir los trabajos homogéneamente a lo largo de la tarjeta */
+.exp-list {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important; /* Reparte los ítems equilibradamente */
+  flex-grow: 1 !important; /* Permite que la lista llene el espacio vertical restante */
+  margin-top: 10px !important;
+}
+
+/* 4. Ajustes sutiles de texto */
+.exp-item strong {
+  font-size: 0.85rem !important;
+  line-height: 1.15 !important;
+}
+
+.exp-item span {
+  font-size: 0.73rem !important;
+  line-height: 1.1 !important;
+  opacity: 0.75;
+}
+
+/* ======================================================
+   MOSTRAR IMAGEN DE FONDO EN CELULARES (.hero-image)
+   ====================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Asegurar que el contenedor principal sea visible */
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    min-height: auto !important;
+  }
+
+  /* 2. Forzar que .hero-image se muestre debajo del texto */
+  .hero-image {
+    display: block !important;
+    width: 100% !important;
+    height: 300px !important; /* Ajusta la altura visible de la imagen */
+    min-height: 50px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    margin-top: 25px !important;
+  }
+}
