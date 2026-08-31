@@ -3428,3 +3428,33 @@ div.bento-card:has(h2:contains("Sobre mí")) {
     margin-top: 25px !important;
   }
 }
+
+/* 1. Ajustar el contenedor general para evitar desbordamiento horizontal */
+.bento-grid, .bento-col {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Asegurar que todas las imágenes se adapten al ancho de su tarjeta */
+.photo-box img, 
+.about-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 3. Alinear el nombre de usuario y los iconos sin que se encimen */
+.social-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
